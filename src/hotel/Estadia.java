@@ -7,14 +7,12 @@ public class Estadia {
 	private int dias;
 	
 	public Estadia(String nomeAnimal, String tipoAnimal, int idadeAnimal, int dias, double valor) throws Exception{
-		nomeAnimal = animal.getNome();
-		tipoAnimal = animal.getTipo();
-		idadeAnimal = animal.getIdade();
 		
 		verificaDados(dias, valor);
 		
 		this.dias = dias;
 		this.valor = valor;
+		this.animal = new Animal(nomeAnimal, tipoAnimal, idadeAnimal);
 	}
 
 	private void verificaDados(int dias, double valor) throws Exception {
