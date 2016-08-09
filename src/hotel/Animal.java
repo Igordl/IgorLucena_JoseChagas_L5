@@ -18,13 +18,13 @@ public class Animal {
 	private void verificaDados(String nomeAnimal, String tipoAnimal, int idadeAnimal)
 			throws Exception {
 		if(nomeAnimal == null || nomeAnimal.trim().isEmpty()){
-			throw new Exception("Nome do animal nao deve ser nulo ou vazio");
+			throw new Exception("Nome de um animal nao pode ser nulo ou vazio");
 		}
 		if(tipoAnimal == null || tipoAnimal.trim().isEmpty()){
-			throw new Exception("Tipo do animal nao deve ser nulo ou vazio");
+			throw new Exception("Tipo de um animal nao pode ser nulo ou vazio");
 		}
 		if(idadeAnimal <= 0){
-			throw new Exception("Idade do animal nao deve ser menor ou igual a zero");
+			throw new Exception("Idade de um animal nao pode ser abaixo de 0");
 		}
 	}
 
