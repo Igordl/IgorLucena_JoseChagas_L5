@@ -1,6 +1,7 @@
 package hotel;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Recepcao {
@@ -17,11 +18,11 @@ public class Recepcao {
 	}
 
 	public void checkOut(String nome) {
-		for (Estadia estadia : estadias) {
-			if (estadia.getNome().equalsIgnoreCase(nome)) {
-				estadias.remove(estadia);
-			}
+		for (int i = 0; i < estadias.size(); i++) {
+			if (estadias.get(i).getNome().equalsIgnoreCase(nome)) {
+				estadias.remove(i);
 
+			}
 		}
 	}
 
@@ -38,9 +39,10 @@ public class Recepcao {
 	}
 
 	public String toString() {
-		String retorno = "Estadias:" + FIM_DE_LINHA;
+		String retorno = "Estadias:";
 		for (Estadia estadia : estadias) {
-			retorno += estadia.toString();
+			retorno += FIM_DE_LINHA + estadia.getNome() + " (" + estadia.getTipo() + "): " + estadia.getDias()
+					+ " dias com o preco de R$ " + estadia.getValor() + "0";
 
 		}
 		return retorno;
